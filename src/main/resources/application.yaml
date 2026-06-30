@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: portfolio-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/portfolio_bd
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 20MB
+
+app:
+  upload:
+    dir: ${UPLOAD_DIR:./uploads/projects}
+  jwt:
+    secret: ChangeCetteCleSecreteParUneVraieCleAleatoireLongueEtSecuriseeEnProd123456
+    expiration-ms: 86400000
+
+server:
+  port: 8080
